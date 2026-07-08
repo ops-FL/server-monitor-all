@@ -26,6 +26,10 @@ CREATE TABLE `app_config`  (
   `value` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
   PRIMARY KEY (`key`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+-- ============================================================================
+-- 可选：插入默认配置
+-- ============================================================================
+-- INSERT INTO app_config (`key`, `value`) VALUES ('webhook_url', 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=你的KEY');
 
 -- ----------------------------
 -- Table structure for metrics
