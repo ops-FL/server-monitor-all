@@ -1,0 +1,30 @@
+/** pages/index/index.wxss */
+.page { background: #0f0f23; min-height: 100vh; padding: 10px; }
+.stats { display: flex; gap: 6px; margin-bottom: 12px; }
+.stat { flex: 1; text-align: center; background: #1a1a2e; border-radius: 8px; padding: 10px 4px; }
+.stat .num { display: block; font-size: 24px; font-weight: bold; }
+.stat .lbl { display: block; font-size: 10px; color: #888; margin-top: 2px; }
+.blue { color: #4fc3f7; } .green { color: #66bb6a; } .red { color: #ef5350; } .yellow { color: #ffa726; } .purple { color: #b388ff; }
+.filters { display: flex; gap: 6px; margin-bottom: 10px; flex-wrap: wrap; }
+.filter { padding: 4px 12px; border-radius: 12px; font-size: 12px; background: #1a1a2e; color: #888; border: 1px solid #2a2a4e; }
+.filter.active { background: #1e88e5; color: white; border-color: #1e88e5; }
+.card { background: #1a1a2e; border-radius: 8px; padding: 12px; margin-bottom: 8px; }
+.row { display: flex; align-items: center; margin-bottom: 8px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; flex-shrink: 0; }
+.dot.alive { background: #66bb6a; } .dot.slow { background: #ffa726; } .dot.dead { background: #ef5350; }
+.name { font-size: 14px; font-weight: bold; color: #e0e0e0; flex: 1; }
+.ip { font-size: 10px; color: #555; }
+.bars { display: flex; gap: 4px; }
+.bar-item { flex: 1; text-align: center; }
+.bar-item.disk-list { flex: 2; }
+.bar-lbl { display: block; font-size: 9px; color: #666; }
+.bar-bg { height: 4px; background: #2a2a4e; border-radius: 2px; margin: 2px 0; overflow: hidden; }
+.bar-bg.small { height: 3px; margin: 2px 0 1px; }
+.bar-fill { height: 100%; border-radius: 2px; min-width: 2px; }
+.bar-val { font-size: 12px; color: #aaa; }
+.bar-val.red { color: #ef5350; }
+.disk-bars { }
+.disk-row { display: flex; align-items: center; gap: 2px; margin-bottom: 2px; }
+.disk-row .bar-bg { flex: 1; }
+.disk-mount { font-size: 8px; color: #555; width: 28px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left; flex-shrink: 0; }
+.time { display: block; text-align: right; font-size: 10px; color: #555; margin-top: 4px; }

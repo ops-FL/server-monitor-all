@@ -1,0 +1,24 @@
+/** pages/detail/detail.wxss */
+.page { background: #0f0f23; min-height: 100vh; padding: 10px; }
+.card { background: #1a1a2e; border-radius: 8px; padding: 12px; margin-bottom: 8px; }
+.top { display: flex; align-items: center; margin-bottom: 4px; }
+.dot.big { width: 10px; height: 10px; margin-right: 10px; flex-shrink: 0; border-radius: 50%; }
+.dot.alive { background: #66bb6a; } .dot.slow { background: #ffa726; } .dot.dead { background: #ef5350; }
+.name.big { font-size: 16px; font-weight: bold; color: #e0e0e0; flex: 1; }
+.ipp { font-size: 11px; color: #555; }
+.time { font-size: 10px; color: #555; margin-left: 20px; display: block; }
+.mh { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; font-size: 14px; color: #aaa; }
+.mb { height: 6px; background: #2a2a4e; border-radius: 3px; overflow: hidden; }
+.fill { height: 100%; border-radius: 3px; min-width: 2px; }
+.sub { font-size: 11px; color: #666; margin-top: 4px; }
+.row2 { display: flex; gap: 10px; font-size: 12px; color: #aaa; flex-wrap: wrap; }
+.mb.small { height: 4px; }
+.disk-list { margin-top: 4px; }
+.disk-item { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #2a2a4e; }
+.disk-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.disk-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+.disk-mount { font-size: 13px; font-weight: bold; color: #ccc; }
+.disk-percent { font-size: 14px; font-weight: bold; }
+.disk-sub { font-size: 10px; color: #555; margin-top: 2px; }
+.red { color: #ef5350; }
+.btn { width: 100%; background: #1e88e5; color: white; border: none; border-radius: 8px; padding: 10px; font-size: 14px; text-align: center; margin-top: 10px; box-sizing: border-box; }

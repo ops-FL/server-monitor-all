@@ -1,0 +1,38 @@
+<view class="page">
+  <view class="summary">
+    <view class="sum-row">
+      <view class="sum-item all {{!filterType ? 'active' : ''}}" bindtap="switchType" data-type="">全部</view>
+      <view class="sum-item cpu {{filterType === 'CPU' ? 'active' : ''}}" bindtap="switchType" data-type="CPU">{{summary.cpuAlerts || 0}} CPU</view>
+      <view class="sum-item mem {{filterType === '内存' ? 'active' : ''}}" bindtap="switchType" data-type="内存">{{summary.memAlerts || 0}} 内存</view>
+      <view class="sum-item disk {{filterType === '磁盘' ? 'active' : ''}}" bindtap="switchType" data-type="磁盘">{{summary.diskAlerts || 0}} 磁盘</view>
+      <view class="sum-item tcp {{filterType === 'TCP' ? 'active' : ''}}" bindtap="switchType" data-type="TCP">{{summary.tcpAlerts || 0}} TCP</view>
+      <view class="sum-item offline {{filterType === '离线' ? 'active' : ''}}" bindtap="switchType" data-type="离线">{{summary.offlineAlerts || 0}} 离线</view>
+    </view>
+  </view>
+
+  <view class="list">
+    <view class="card" wx:for="{{alerts}}" wx:key="*this" bindtap="goDetail" data-host="{{item.host}}">
+      <view class="left">
+        <view class="tag2 {{item.type === 'CPU' ? 'cpu' : item.type === '内存' ? 'mem' : item.type === '磁盘' ? 'disk' : item.type === '离线' ? 'offline' : 'tcp'}}">{{item.type}}</view>
+      </view>
+      <view class="right">
+        <view class="row1">
+          <text class="name">{{item.name}}</text>
+          <text class="ip">{{item.host}}</text>
+        </view>
+        <view class="row2">
+          <text class="val">{{item.value}}</text>
+          <text class="desc" wx:if="{{item.type === '磁盘' && item.mount}}">{{item.mount}}</text>
+          <text class="desc" wx:if="{{item.type === '磁盘' && item.used && item.total}}">({{item.used}}/{{item.total}})</text>
+          <text class="desc" wx:if="{{item.type === '离线'}}">服务器无响应 · {{item.time}}</text>
+          <text class="desc" wx:if="{{item.type !== '磁盘' && item.type !== '离线'}}">{{item.desc}} · {{item.time}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="empty" wx:if="{{alerts.length === 0}}">
+    <text class="empty-icon">✅</text>
+    <text class="empty-lbl">暂无{{filterType}}告警，一切正常</text>
+  </view>
+</view>

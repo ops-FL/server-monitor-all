@@ -1,0 +1,57 @@
+<!-- pages/detail/detail.wxml -->
+<view class="page">
+  <view class="card">
+    <view class="top">
+      <view class="dot big {{data.status}}"></view>
+      <text class="name big">{{data.name}}</text>
+      <text class="ipp">{{data.host}}</text>
+    </view>
+    <text class="time">更新于 {{data.lastUpdate}}</text>
+  </view>
+
+  <view class="card">
+    <view class="mh"><text>CPU 使用率</text><text class="{{data.cpu>80?'red':''}}" style="font-size:18px;font-weight:bold">{{data.cpu}}%</text></view>
+    <view class="mb"><view class="fill" style="width:{{data.cpu}}%;background:{{data.cpu>80?'#ef5350':'#4fc3f7'}}"></view></view>
+    <view class="sub">负载: {{data.load1}}</view>
+  </view>
+
+  <view class="card">
+    <view class="mh"><text>内存</text><text class="{{data.mem>80?'red':''}}" style="font-size:18px;font-weight:bold">{{data.mem}}%</text></view>
+    <view class="mb"><view class="fill" style="width:{{data.mem}}%;background:{{data.mem>80?'#ef5350':'#66bb6a'}}"></view></view>
+    <view class="sub">已用 {{data.memUsed}}GB / 总计 {{data.memTotal}}GB</view>
+  </view>
+
+  <!-- 磁盘总览 -->
+  <view class="card">
+    <view class="mh"><text>磁盘（根分区）</text><text class="{{data.disk>85?'red':''}}" style="font-size:18px;font-weight:bold">{{data.disk}}%</text></view>
+    <view class="mb"><view class="fill" style="width:{{data.disk}}%;background:{{data.disk>85?'#ef5350':'#ffa726'}}"></view></view>
+    <view class="sub">已用 {{data.diskUsed}}GB / 总计 {{data.diskTotal}}GB</view>
+  </view>
+  
+  <!-- 所有磁盘分区列表 -->
+  <view class="card" wx:if="{{data.disks && data.disks.length > 0}}">
+    <view class="mh"><text>所有磁盘分区</text></view>
+    <view class="disk-list">
+      <view class="disk-item" wx:for="{{data.disks}}" wx:key="mount">
+        <view class="disk-header">
+          <text class="disk-mount">{{item.mount}}</text>
+          <text class="disk-percent {{item.percent>85?'red':''}}">{{item.percent}}%</text>
+        </view>
+        <view class="mb small"><view class="fill" style="width:{{item.percent}}%;background:{{item.percent>85?'#ef5350':'#ffa726'}}"></view></view>
+        <view class="disk-sub">已用 {{item.used_gb}}GB / 总计 {{item.total_gb}}GB</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="mh"><text>磁盘 IO</text></view>
+    <view class="row2"><text>读: {{data.ioRead}}MB/s</text><text>写: {{data.ioWrite}}MB/s</text><text>利用率: {{data.ioUtil}}%</text></view>
+  </view>
+
+  <view class="card">
+    <view class="mh"><text>TCP 连接</text></view>
+    <view class="row2"><text>ESTABLISHED: {{data.tcp}}</text><text>TIME_WAIT: {{data.tcpTw}}</text></view>
+  </view>
+
+  <button class="btn" bindtap="refresh">🔄 刷新</button>
+</view>

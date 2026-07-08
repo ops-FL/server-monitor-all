@@ -1,0 +1,77 @@
+<!-- pages/index/index.wxml -->
+<view class="page">
+  <view class="stats">
+    <view class="stat blue">
+      <text class="num">{{total}}</text>
+      <text class="lbl">总服务器</text>
+    </view>
+    <view class="stat green">
+      <text class="num">{{alive}}</text>
+      <text class="lbl">在线</text>
+    </view>
+    <view class="stat red">
+      <text class="num">{{dead}}</text>
+      <text class="lbl">离线</text>
+    </view>
+    <view class="stat yellow" bindtap="goAlert">
+      <text class="num">{{alerts}}</text>
+      <text class="lbl">告警</text>
+    </view>
+    <view class="stat purple" bindtap="goManage">
+      <text class="num">⚙</text>
+      <text class="lbl">管理</text>
+    </view>
+  </view>
+
+  <view class="filters">
+    <view class="filter {{filter === '' ? 'active' : ''}}" bindtap="setFilter" data-f="">全部</view>
+    <view class="filter {{filter === 'cpu' ? 'active' : ''}}" bindtap="setFilter" data-f="cpu">CPU过高</view>
+    <view class="filter {{filter === 'mem' ? 'active' : ''}}" bindtap="setFilter" data-f="mem">内存过高</view>
+    <view class="filter {{filter === 'disk' ? 'active' : ''}}" bindtap="setFilter" data-f="disk">磁盘过高</view>
+    <view class="filter {{filter === 'tcp' ? 'active' : ''}}" bindtap="setFilter" data-f="tcp">TCP过多</view>
+    <view class="filter {{filter === 'dead' ? 'active' : ''}}" bindtap="setFilter" data-f="dead">已离线</view>
+  </view>
+
+  <view class="list">
+    <view class="card" wx:for="{{list}}" wx:key="host" bindtap="goDetail" data-host="{{item.host}}">
+      <view class="row">
+        <view class="dot {{item.status}}"></view>
+        <text class="name">{{item.name}}</text>
+        <text class="ip">{{item.host}}</text>
+      </view>
+      <view class="bars">
+        <view class="bar-item">
+          <text class="bar-lbl">CPU</text>
+          <view class="bar-bg"><view class="bar-fill" style="width:{{item.cpu}}%;background:{{item.cpu>80?'#ef5350':'#4fc3f7'}}"></view></view>
+          <text class="bar-val {{item.cpu>80?'red':''}}">{{item.cpu}}%</text>
+        </view>
+        <view class="bar-item">
+          <text class="bar-lbl">内存</text>
+          <view class="bar-bg"><view class="bar-fill" style="width:{{item.mem}}%;background:{{item.mem>80?'#ef5350':'#66bb6a'}}"></view></view>
+          <text class="bar-val {{item.mem>80?'red':''}}">{{item.mem}}%</text>
+        </view>
+        <view class="bar-item disk-list">
+          <text class="bar-lbl">磁盘</text>
+          <block wx:if="{{item.disks && item.disks.length > 0}}">
+            <view class="disk-bars">
+              <view class="disk-row" wx:for="{{item.disks}}" wx:key="mount">
+                <view class="bar-bg small"><view class="bar-fill" style="width:{{item.percent}}%;background:{{item.percent>85?'#ef5350':'#ffa726'}}"></view></view>
+                <text class="bar-val {{item.percent>85?'red':''}}">{{item.percent}}%</text>
+                <text class="disk-mount">{{item.mount}}</text>
+              </view>
+            </view>
+          </block>
+          <block wx:else>
+            <view class="bar-bg"><view class="bar-fill" style="width:{{disk}}%;background:{{disk>85?'#ef5350':'#ffa726'}}"></view></view>
+            <text class="bar-val {{disk>85?'red':''}}">{{disk}}%</text>
+          </block>
+        </view>
+        <view class="bar-item">
+          <text class="bar-lbl">TCP</text>
+          <text class="bar-val" style="font-weight:bold">{{item.tcp}}</text>
+        </view>
+      </view>
+      <text class="time">⏱ {{item.lastUpdate}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,30 @@
+.page { background: #0f0f23; min-height: 100vh; padding: 16px; }
+.summary { margin-bottom: 16px; }
+.sum-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.sum-item { flex: 1; text-align: center; padding: 10px 4px; border-radius: 8px; font-size: 13px; font-weight: bold; color: white; opacity: 0.55; min-width: 60px; }
+.sum-item.active { opacity: 1; box-shadow: 0 0 12px rgba(255,255,255,0.2); }
+.sum-item.all { background: #37474f; }
+.sum-item.cpu { background: #ef5350; }
+.sum-item.mem { background: #42a5f5; }
+.sum-item.disk { background: #ffa726; }
+.sum-item.tcp { background: #ab47bc; }
+.sum-item.offline { background: #ef4444; }
+.list { }
+.card { background: #1a1a2e; border-radius: 10px; padding: 14px; margin-bottom: 10px; display: flex; align-items: center; }
+.left { margin-right: 14px; }
+.tag2 { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; color: white; }
+.tag2.cpu { background: #ef5350; }
+.tag2.mem { background: #42a5f5; }
+.tag2.disk { background: #ffa726; }
+.tag2.tcp { background: #ab47bc; }
+.tag2.offline { background: #ef4444; }
+.right { flex: 1; min-width: 0; }
+.row1 { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
+.name { font-size: 15px; font-weight: bold; color: #e0e0e0; flex-shrink: 0; max-width: 50%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ip { font-size: 11px; color: #666; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.row2 { display: flex; align-items: center; gap: 8px; }
+.val { font-size: 18px; font-weight: bold; color: #e0e0e0; }
+.desc { font-size: 11px; color: #666; }
+.empty { text-align: center; margin-top: 80px; }
+.empty-icon { font-size: 48px; display: block; }
+.empty-lbl { font-size: 15px; color: #666; margin-top: 10px; display: block; }
