@@ -75,7 +75,7 @@
 ### 1. 克隆项目
 
 ```bash
-git clone https://github.com/你的用户名/server-monitor-all.git
+git clone https://github.com/ops-FL/server-monitor-all.git
 cd server-monitor-all
 ```
 
@@ -110,10 +110,10 @@ MYSQL_DB   = "server_monitor"  # 数据库名
 也可以手动建库（推荐首次部署时直接导入）：
 
 ```bash
-mysql -uroot -p < schema.sql
+mysql -uroot -p < server_monitor.sql
 ```
 
-> `schema.sql` 包含完整的建库建表语句，3 张表一一对应。
+> `server_monitor.sql` 包含完整的建库建表语句，3 张表一一对应。
 > 如果表已存在，`CREATE TABLE IF NOT EXISTS` 不会覆盖，放心执行。
 
 ### 4. 添加服务器
@@ -232,7 +232,7 @@ server-monitor-all/
 
 ## 📡 API 接口文档
 
-所有 API 基于 `http://<host>:8080`，返回 JSON 格式。
+所有 API 基于 `http://<host>:9098`，返回 JSON 格式。
 
 ### 认证
 
