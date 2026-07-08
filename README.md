@@ -11,9 +11,14 @@
 | 首页 - 服务器列表 | 单台详情页 | 告警列表 |
 |---|---|---|
 | 服务器分组展示、状态一目了然 | CPU/内存/磁盘/IO/TCP 指标详情 | 实时告警、筛选和恢复通知 |
-
-> 补截图：在你的小程序中截图后放到 `screenshots/` 目录下即可。
-
+<img width="386" height="846" alt="image" src="https://github.com/user-attachments/assets/451140bd-2e9f-46e2-8610-a77995f16f5d" />
+<img width="392" height="852" alt="05706efaa90ceb06dadadc83c3912402" src="https://github.com/user-attachments/assets/efbda9d0-8812-4a17-aab3-f788f3628a96" />
+<img width="392" height="772" alt="3c135f930c925e81f1d9b7cf30b58c5d" src="https://github.com/user-attachments/assets/ad349d8f-e3bd-472e-88a9-fb408a2a6a2b" />
+<img width="388" height="841" alt="aa9b9459d183804fe967f5554dd771d1" src="https://github.com/user-attachments/assets/1d487407-e8f3-4c27-b3cd-f52dba0a222f" />
+<img width="398" height="750" alt="a1eac5cfcadb48cbd21c8172ea7febbd" src="https://github.com/user-attachments/assets/571d7db2-9769-4830-8ed1-05b63fb44941" />
+<img width="406" height="805" alt="a640072873727b0134738f511320d9a1" src="https://github.com/user-attachments/assets/61e563f9-f731-4b84-bf31-75b94e750232" />
+<img width="429" height="840" alt="4934804fa5f9625a418757c66c38540d" src="https://github.com/user-attachments/assets/025000a8-81b1-43e9-8031-23623df73a6c" />
+<img width="417" height="792" alt="1a66bed3766e54e661eb5dcccb1ad10c" src="https://github.com/user-attachments/assets/ee22bea1-dd89-4258-a62a-23ad9285024c" />
 ---
 
 ## ✨ 功能特性
