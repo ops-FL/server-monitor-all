@@ -171,7 +171,7 @@ python collector.py
 nohup python api_server.py > api.log 2>&1 &
 ```
 
-API 默认监听 `0.0.0.0:8080`，可通过修改 `api_server.py` 中的 `API_PORT` 调整。
+API 默认监听 `0.0.0.0:9098`，可通过修改 `api_server.py` 中的 `API_PORT` 调整。
 
 ### 7. 配置定时采集
 
