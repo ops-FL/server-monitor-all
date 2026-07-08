@@ -220,10 +220,7 @@ server-monitor-all/
 ├── collector.py                    # SSH 采集器（核心）
 ├── api_server.py                   # RESTful API 服务
 ├── alerter.py                      # 告警引擎 + 企业微信推送
-├── collect.yaml                    # （旧版配置，仅供兼容参考）
-├── servers.example.yaml            # （旧版配置模板）
-├── schema.sql                      # 数据库完整建表语句（DDL）
-├── alter_table.sql                 # 数据库迁移 SQL（旧版兼容）
+├── server_monitor.sql              # 数据库完整建表语句（DDL）
 ├── miniprogram/                    # 微信小程序源码
 │   ├── app.js                      # 小程序入口 + 全局 API 封装
 │   ├── app.json                    # 页面注册
