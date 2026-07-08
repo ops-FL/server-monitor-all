@@ -19,6 +19,8 @@
 <img width="406" height="805" alt="a640072873727b0134738f511320d9a1" src="https://github.com/user-attachments/assets/61e563f9-f731-4b84-bf31-75b94e750232" />
 <img width="429" height="840" alt="4934804fa5f9625a418757c66c38540d" src="https://github.com/user-attachments/assets/025000a8-81b1-43e9-8031-23623df73a6c" />
 <img width="417" height="792" alt="1a66bed3766e54e661eb5dcccb1ad10c" src="https://github.com/user-attachments/assets/ee22bea1-dd89-4258-a62a-23ad9285024c" />
+<img width="531" height="218" alt="image" src="https://github.com/user-attachments/assets/73e51f13-b4e7-4545-9b46-7a2a1c0c575d" />
+<img width="481" height="150" alt="image" src="https://github.com/user-attachments/assets/312a93d2-7685-4104-9c7f-af9c0866c532" />
 ---
 
 ## ✨ 功能特性
